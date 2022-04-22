@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Compony from "./components/Compony";
 
 function App() {
+  let OperatingSystem = ["Android", "Blackberry", "iPhone", "Windows Phone"];
+  let manfacturers = ["Samsung", "HTC", "Micromax", "Apple"];
+
+  let data = [
+    {
+      title: "Mobile Operating System",
+      items: [
+        { product: "Android" },
+        { product: "Blackberry" },
+        { product: "iPhone" },
+        { product: "Windows Phone" },
+      ],
+    },
+    {
+      title: "Mobile Manfacturers",
+      items: [
+        { product: "Samsung", listStyle: "square" },
+        { product: "HTC", listStyle: "square" },
+        { product: "Micromax" },
+        { product: "Apple", listStyle: "circle" },
+      ],
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      { data.map(elem => <Compony data={elem}/>)}
     </div>
   );
 }
